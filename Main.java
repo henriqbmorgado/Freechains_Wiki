@@ -24,7 +24,8 @@ public class Main {
       System.out.println("5. Get chain entry");
       System.out.println("6. See chains blocks");
       System.out.println("7. (Dis)Like post");
-      System.out.println("8. Conection");
+      System.out.println("8. Get reps");
+      System.out.println("9. Conection");
       System.out.println("0. Exit");
       System.out.print("Chose option: ");
       String opt = sc.nextLine();
@@ -48,7 +49,6 @@ public class Main {
           System.out.println("\nChains:");
           System.out.println(wiki.getChains());
           break;
-
 
         case "4":
           System.out.print("Chain name (ex: #abc): ");
@@ -108,7 +108,7 @@ public class Main {
             case "1":
               System.out.print("Chain name (ex: #abc): ");
               String c7 = sc.nextLine();
-              System.out.println("Post hash: ");
+              System.out.print("Post hash: ");
               String hash1 = sc.nextLine();
               wiki.likePost(hash1, c7);
               break;
@@ -116,7 +116,7 @@ public class Main {
             case "2":
               System.out.print("Chain name (ex: #abc): ");
               String c8 = sc.nextLine();
-              System.out.println("Post hash: ");
+              System.out.print("Post hash: ");
               String hash2 = sc.nextLine();
               wiki.dislikePost(hash2, c8);
               break;
@@ -130,6 +130,19 @@ public class Main {
           break;
 
         case "8":
+          System.out.print("Chain name (ex: #abc): ");
+          String c9 = sc.nextLine();
+          System.out.print("Post hash/User public key: ");
+          String hash3 = sc.nextLine();
+          int rep = wiki.getReps(hash3, c9);
+          if (rep >= 31) {
+            System.out.println("Faild to get \'" + hash3 + "\' reps.");
+          } else {
+            System.out.println("\nReps: " + rep);
+          }
+          break;
+
+        case "9":
           System.out.println("1. Send chain");
           System.out.println("2. Recive chain");
           System.out.println("0. Back");
