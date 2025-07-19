@@ -1,6 +1,8 @@
 # Freechains_Wiki
 
-Descrição: Enciclopédia cooperativa peer-to-peer (P2P) desenvolvida para ambientes não permissionados, na qual os usuários utilizam do portocolo Freechains para criam cadeias, que funcionam analogamente a tópicos individuais da enciclopédia. Cada cadeia armazena os verbetes referentes ao seu tema por meio de patches, ou seja, fragmentos de edições que compõem colaborativamente o conteúdo final do tópico. A construção dos verbetes é realizada de forma incremental. O verbete final é obtido pela aplicação sequencial dos patches, construindo o conteúdo de maneira colaborativa.
+Descrição: Enciclopédia cooperativa peer-to-peer (P2P) desenvolvida para ambientes não permissionados, na qual os usuários utilizam do protocolo Freechains para criam cadeias, que funcionam analogamente a tópicos individuais da enciclopédia.
+Cada cadeia armazena o verbetes referentes ao seu tema por meio de patches, ou seja,  post com fragmentos de edições que compõem colaborativamente o conteúdo final do tópico. 
+A construção dos verbetes é realizada de forma incremental. O verbete final é obtido pela aplicação sequencial (determinada pela função de consensus do Freechains) dos patches, construindo o conteúdo de maneira colaborativa.
 
 A aplicação utiliza de:
 
