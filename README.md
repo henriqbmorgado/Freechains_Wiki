@@ -39,7 +39,7 @@ Wiki: Classe que  encapsula toda a lógica de execução de comandos do Freechai
 
   Limitações:
   
-  -A aplicação não aceita arquivos como entrada para o conteudo de um bloco, apenas aceita texto inserido direto pel oterminal.
+  -A aplicação não aceita arquivos como entrada para o conteudo de um bloco, apenas aceita texto inserido direto pelo terminal.
 
   -A aplicação não implementa as funções do Freechains: freechains chains listen; freechains chain name genesis; freechains peer addr:port chains.
 
