@@ -32,6 +32,8 @@ Wiki: Classe que  encapsula toda a lógica de execução de comandos do Freechai
   -Enviar e receber os blocos (posts) da cadeia (tópico) com outros peers.
 
   -Curtir e descurtir blocos (posts).
+  
+  -Obter reps de blocos (posts) e usuarios de uma cadeia (tópico).
 
   -Obter blocos (post) e payloads (patches) de uma cadeia (tópico).
 
