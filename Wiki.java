@@ -100,6 +100,30 @@ public class Wiki {
     }
   }
 
+  public ArrayList<String> getChains() {
+    ArrayList<String> chains;
+    try {
+      Process p = Exec(
+          "./freechains --host=localhost:" + this.wiki_port + " chains list");
+      Thread.sleep(100);
+      chains = readStream(p.getInputStream());
+      return chains;
+    } catch (Exception e) {
+      System.err.println("Faild to list chains: " + e.getMessage());
+    }
+    return null;
+  }
+
+  public void leaveChain(String chain_name) {
+    try {
+      Process p = Exec(
+          "./freechains --host=localhost:" + this.wiki_port + " chains leave \'" + chain_name + "\'");
+      System.out.println("Left chain " + chain_name);
+    } catch (Exception e) {
+      System.err.println("Faild to left the chain \"" + chain_name + "\": " + e.getMessage());
+    }
+  }
+
   public String getEntry(String topic) {
     ArrayList<String> blocks = getBlocks(topic);
 

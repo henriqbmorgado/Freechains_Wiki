@@ -10,18 +10,6 @@ public class Simul {
     }
   }
 
-  public static void timePass(Wiki[] wikis, String time) {
-    try {
-      for (Wiki wiki : wikis) {
-        Process p = wiki.Exec("./freechains-host now " + time + " --port=" + wiki.wiki_port);
-        Thread.sleep(200);
-      }
-      System.out.println("Time passage simulated.");
-    } catch (Exception e) {
-      System.out.println("Faild to simulate time passing: " + e.getMessage());
-    }
-  }
-
   public static void main(String[] args) {
 
     Wiki[] wikis = new Wiki[4];
@@ -40,13 +28,6 @@ public class Simul {
       wikis[i].enterChain(topic, wikis[0].user_pubkey);
     }
     System.out.println("");
-
-    String base_time = "0";
-    try {
-      base_time = wikis[0].readStream_Singular(wikis[0].Exec("date +%s").getInputStream());
-    } catch (Exception e) {
-      System.out.println("Faild to read system time: " + e.getMessage());
-    }
 
     // Pioneiro (User0) cria a primeira entrada para o tópico
     String entry0 = "o ciclo da agua descreve como a agua se move pela terra inclui fases de evaporacao, condensacao e precipitacao";
