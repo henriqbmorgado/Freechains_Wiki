@@ -1,0 +1,14 @@
+# Java
+*.class
+
+# Logs
+logs/
+*.log
+
+# Freechains
+freechains
+freechains-host
+
+# IDE
+.vscode/
+.idea/
