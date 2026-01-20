@@ -1,13 +1,15 @@
 import java.util.Scanner;
+import java.io.File;
 
 public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     Wiki wiki = new Wiki("8330");
 
-    System.out.print("Set a host directory (ex: ./myWiki/): ");
+    System.out.print("Set a host directory (ex: /myWiki/): ");
     String dir = sc.nextLine();
-    wiki.startHost(dir);
+    File file = new File(dir);
+    wiki.startHost(file.getAbsolutePath());
 
     System.out.print("Set user key (ex: pass123): ");
     String secret = sc.nextLine();

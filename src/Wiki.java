@@ -3,6 +3,7 @@ import java.util.*;
 import name.fraser.neil.plaintext.diff_match_patch;
 
 public class Wiki {
+  String projectRoot = System.getProperty("user.dir");
 
   public String user_pvtkey;
   public String user_pubkey;
@@ -53,7 +54,7 @@ public class Wiki {
   public void setUserKeys(String key) {
     ArrayList<String> result;
     try {
-      Process p = Exec("./freechains keys pubpvt \"" + key + "\"");
+      // Process p = Exec("./freechains keys pubpvt '" + key.replace("'", "'\\''") + "'");
       Thread.sleep(100);
       result = readStream(p.getInputStream());
       this.user_pubkey = result.getFirst();
@@ -66,7 +67,7 @@ public class Wiki {
   public void startHost(String dir) {
     try {
       Process p = Exec("./freechains-host start " + dir + " --port=" + this.wiki_port);
-      Thread.sleep(1150);
+      Thread.sleep(2000);
       System.out.println("Freechains host started in: " + dir);
     } catch (Exception e) {
       System.err.println("Faild to start host: " + e.getMessage());
