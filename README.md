@@ -39,6 +39,7 @@ No diretório raiz do projeto, compile e execute a interface interativa:
 No diretório raiz do projeto, compile e execute a interface interativa:
 
 ```bash
+javac -d . src/name/fraser/neil/plaintext/*.java
 javac -d . src/*.java
 java Main
 ```
@@ -55,7 +56,6 @@ java Main
 ### Execução da Simulação
 Para rodar o cenário de teste automatizado que simula múltiplos usuários editando e sincronizando o tópico "#Ciclo_da_Agua":
 
-```bash
-javac -d . src/*.java
+```bash:w
 java Simul
 ```
