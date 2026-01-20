@@ -52,7 +52,7 @@ public class Wiki {
   public void setUserKeys(String key) {
     ArrayList<String> result;
     try {
-      Process p = Exec("./freechains keys pubpvt '" + key.replace("'", "'\\''") + "'");
+      Process p = Exec("./freechains keys pubpvt '" + key.replace("'", "\\'") + "'");
       Thread.sleep(100);
       result = readStream(p.getInputStream());
       this.user_pubkey = result.getFirst();
