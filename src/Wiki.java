@@ -3,8 +3,6 @@ import java.util.*;
 import name.fraser.neil.plaintext.diff_match_patch;
 
 public class Wiki {
-  String projectRoot = System.getProperty("user.dir");
-
   public String user_pvtkey;
   public String user_pubkey;
   public String wiki_port;
@@ -54,7 +52,7 @@ public class Wiki {
   public void setUserKeys(String key) {
     ArrayList<String> result;
     try {
-      // Process p = Exec("./freechains keys pubpvt '" + key.replace("'", "'\\''") + "'");
+      Process p = Exec("./freechains keys pubpvt '" + key.replace("'", "'\\''") + "'");
       Thread.sleep(100);
       result = readStream(p.getInputStream());
       this.user_pubkey = result.getFirst();
